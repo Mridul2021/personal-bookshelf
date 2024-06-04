@@ -8,7 +8,7 @@ import { handleAddToBookshelf } from './components/bookshelfUtils';
 
 const Bookshelf = () => {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
-
+    const isMediumScreen = useMediaQuery('(max-width:900px)');
     const [bookshelf, setBookshelf] = useState([]);
 
     useEffect(() => {
@@ -55,10 +55,10 @@ const Bookshelf = () => {
                         {bookshelf.map((items) => (
                             <Grid item sm={6} xs={12} md={3} key={items.key}>
                                 <Box sx={{
-                                    borderRadius: '2px',
+                                    borderRadius: '20px',
                                     border: '1px solid black',
                                     padding: '10px',
-                                    width: isSmallScreen ? '80vw' : "18vw",
+                                    width: isSmallScreen ? '80vw' : isMediumScreen ? '35vw' : "18vw",
                                     height: '40vh',
                                     position: 'relative',
                                 }}>
